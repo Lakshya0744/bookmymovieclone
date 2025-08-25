@@ -1,0 +1,8 @@
+com\bookmymovie\service\MovieService.class
+com\bookmymovie\model\Banner.class
+com\bookmymovie\controller\BookMyMovieController.class
+com\bookmymovie\util\DatabaseUtil.class
+com\bookmymovie\service\BannerService.class
+com\bookmymovie\BookMyMovieApplication.class
+com\bookmymovie\StaticResourceConfig.class
+com\bookmymovie\model\Movie.class
