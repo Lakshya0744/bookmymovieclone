@@ -1,24 +1,18 @@
-# Use OpenJDK 17
-FROM openjdk:17-jdk-slim
+FROM maven:3.9.4-eclipse-temurin-17 AS build
 
-# Set working directory
 WORKDIR /app
 
-# Copy Maven wrapper and pom.xml first (for caching dependencies)
-COPY mvnw pom.xml ./
-COPY .mvn .mvn
-
-# Download dependencies (cache)
-RUN ./mvnw dependency:go-offline
-
-# Copy source code
+# Copy pom and source
+COPY pom.xml .
 COPY src src
 
 # Build the project
-RUN ./mvnw package -DskipTests
+RUN mvn clean package -DskipTests
 
-# Expose port
+# Use OpenJDK to run
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=build /app/target/bookmymovie-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
+CMD ["java", "-jar", "app.jar"]
 
-# Run the Spring Boot app
-CMD ["java", "-jar", "target/bookmyshow-0.0.1-SNAPSHOT.jar"]
