@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/")
@@ -23,6 +24,19 @@ public class BookMyMovieController {
         this.bannerService = bannerService;
     }
 
+
+    @GetMapping({"", "/"})
+    public Map<String, String> root() {
+        return Map.of(
+                "status", "ok",
+                "service", "BookMyMovie Backend"
+        );
+    }
+
+    @GetMapping("/health")
+    public Map<String, String> health() {
+        return Map.of("status", "UP");
+    }
 
     @GetMapping("/movies")
     public List<Movie> getAllMovies() {
