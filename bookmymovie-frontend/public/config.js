@@ -1,3 +1,3 @@
 window.RUNTIME_CONFIG = {
-  API_BASE: "https://bookmymovie-backend-9bg7.onrender.com"
+  API_BASE: "http://localhost:8080"
 };

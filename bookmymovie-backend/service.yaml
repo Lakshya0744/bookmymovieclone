@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bookmymovie-backend-service
+spec:
+  type: LoadBalancer   # change to NodePort if LoadBalancer isn’t supported
+  selector:
+    app: bookmymovie-backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+

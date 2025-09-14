@@ -1,8 +1,13 @@
 com\bookmymovie\service\MovieService.class
+com\bookmymovie\util\JwtUtil.class
 com\bookmymovie\model\Banner.class
-com\bookmymovie\controller\BookMyMovieController.class
-com\bookmymovie\util\DatabaseUtil.class
+com\bookmymovie\WebConfig.class
+com\bookmymovie\service\AdminUserService.class
+com\bookmymovie\WebConfig$1.class
 com\bookmymovie\service\BannerService.class
+com\bookmymovie\controller\PublicController.class
 com\bookmymovie\BookMyMovieApplication.class
+com\bookmymovie\controller\AdminController.class
+com\bookmymovie\repository\MovieRepository.class
 com\bookmymovie\StaticResourceConfig.class
 com\bookmymovie\model\Movie.class

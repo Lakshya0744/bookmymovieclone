@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookmymovie-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bookmymovie-backend
+  template:
+    metadata:
+      labels:
+        app: bookmymovie-backend
+    spec:
+      containers:
+        - name: bookmymovie-backend
+          image: <your-dockerhub-username>/bookmymovie-backend:latest
+          ports:
+            - containerPort: 8080
